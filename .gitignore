@@ -1,0 +1,4 @@
+Data/kafka_data/*
+Data/mongo_data/*
+Data/zookeeper_data/*
+Data/mysql_data/*
