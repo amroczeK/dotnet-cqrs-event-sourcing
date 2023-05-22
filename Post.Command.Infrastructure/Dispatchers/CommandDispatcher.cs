@@ -27,7 +27,7 @@ namespace Post.Command.Infrastructure.Dispatchers
         /// </summary>
         public async Task SendAsync(BaseCommand command)
         {
-            if (_handlers.TryGetValue(command.GetType(), out Func<BaseCommand, Task> handler))
+            if (_handlers.TryGetValue(command.GetType(), out Func<BaseCommand, Task>? handler))
             {
                 await handler(command);
             }
