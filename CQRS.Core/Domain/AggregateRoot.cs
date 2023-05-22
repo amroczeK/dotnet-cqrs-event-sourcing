@@ -26,6 +26,9 @@ namespace CQRS.Core.Domain
             _changes.Clear();
         }
 
+        /// <summary>
+        /// Method <c>ApplyChange</c> uses reflection to determine which apply method should be invoked on the Concrete Aggregate.
+        /// </summary>
         private void ApplyChange(BaseEvent @event, bool isNew)
         {
             // Get type of concrete aggregate
@@ -45,6 +48,9 @@ namespace CQRS.Core.Domain
             }
         }
 
+        /// <summary>
+        /// Method <c>RaiseEvent</c> invokes the <c>ApplyChange</c> method.
+        /// </summary>
         protected void RaiseEvent(BaseEvent @event)
         {
             ApplyChange(@event, true);
